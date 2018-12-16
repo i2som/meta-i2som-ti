@@ -2,7 +2,7 @@ include linux-common.inc
 
 DESCRIPTION = "The linux-i2som recipe for i2S-AM335x SoM products."
 
-GIT_URL = "git:///home/blackrose/i2S-AM335x/i2S-Sitara-Linux"
+GIT_URL = "git:///${HOME}/i2S-AM335x/i2S-Sitara-Linux"
 SRC_URI = "${GIT_URL};branch=${BRANCH}"
 
 PR = "${INC_PR}.0"
