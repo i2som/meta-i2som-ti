@@ -29,7 +29,7 @@ UBOOT_LOADADDRESS = "0x80008000"
 PREFERRED_PROVIDER_virtual/kernel = "linux-i2som"
 KERNEL_IMAGETYPE ?= "zImage"
 # Install modules in initramfs and rootfs
-#PACKAGE_INSTALL_append = " kernel-modules"
+PACKAGE_INSTALL_append = " kernel-modules"
 KERNEL_MODULE_AUTOLOAD += " cryptodev"
 
 SERIAL_CONSOLES ?= "115200;ttyO0"
