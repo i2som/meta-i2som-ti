@@ -1,0 +1,2 @@
+BRANCH = "ti-img-sgx/${PV}/k4.1"
+SRCREV = "fed0756f1b8b9d526da2821635c7d742989d47c3"
