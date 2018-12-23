@@ -36,14 +36,6 @@ SERIAL_CONSOLES ?= "115200;ttyO0"
 # dont install kernelimage to rootfs
 RDEPENDS_kernel-base = ""
 
-# rootfs images
-# Use the expected value of the ubifs filesystem's volume name in the kernel
-UBI_VOLNAME = "rootfs"
-# The biggest NANDs on current modules are 1GB. With current partition layout,
-# this sums up to 7943 LEBs available for the ubifs
-MKUBIFS_ARGS = "-F -m 2048 -e 126976 -c 2048"
-UBINIZE_ARGS = "-m 2048 -p 0x20000 -s 512 -O 2048"
-
 # xserver
 PREFERRED_PROVIDER_virtual/xserver ?= "xserver-xorg"
 # For built-in LCD, add xf86-input-tslib
@@ -63,4 +55,4 @@ PREFERRED_PROVIDER_virtual/egl ?= "ti-sgx-ddk-um"
 QT_QPA_DEFAULT_PLATFORM ?= "${@bb.utils.contains('MACHINE_FEATURES', 'sgx', 'eglfs', 'linuxfb', d)}"
 
 # default images to build
-IMAGE_FSTYPES ?= "tar.gz ubifs ext4 ubi"
+IMAGE_FSTYPES ?= "tar.gz ubifs ext4"
