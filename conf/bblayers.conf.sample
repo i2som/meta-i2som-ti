@@ -18,7 +18,6 @@ BBLAYERS += "\
     ${OEROOT}/sources/meta-gstreamer1.0 \
     ${OEROOT}/sources/meta-nodejs \
     ${OEROOT}/sources/meta-qt5 \
-    ${OEROOT}/sources/meta-rauc \
     ${OEROOT}/sources/meta-ti \
     ${OEROOT}/sources/meta-i2som-ti \
     ${OEROOT}/sources/meta-i2som-yocto \
