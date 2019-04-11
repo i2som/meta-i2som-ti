@@ -19,6 +19,7 @@ BBLAYERS += "\
     ${OEROOT}/sources/meta-nodejs \
     ${OEROOT}/sources/meta-qt5 \
     ${OEROOT}/sources/meta-ti \
+    ${OEROOT}/sources/meta-swupdate \
     ${OEROOT}/sources/meta-i2som-ti \
     ${OEROOT}/sources/meta-i2som-yocto \
     "
