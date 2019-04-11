@@ -166,7 +166,7 @@ EOF
     mkimage -f ${TMP_BOOTDIR}/linux_fit.its ${IMGDEPLOYDIR}/${IMAGE_NAME}.linux.fit
     
 	# Remove the temporary folder
-	#rm -rf ${TMP_BOOTDIR}
+	rm -rf ${TMP_BOOTDIR}
 }
 
 # Remove the default ".rootfs." suffix for 'linux.fit' images
