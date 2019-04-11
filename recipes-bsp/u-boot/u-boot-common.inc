@@ -12,8 +12,8 @@ UBOOT_LOCALVERSION = "-g${@get_git_revision('${S}').__str__()[:10]}"
 
 UBOOT_SUFFIX ?= "img"
 
-#require ${COREBASE}/meta/recipes-bsp/u-boot/u-boot.inc
-inherit uboot-config deploy
+require recipes-bsp/u-boot/u-boot.inc
+#inherit uboot-config deploy
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/u-boot:"
 
@@ -57,38 +57,6 @@ SPL_BINARY = "MLO"
 
 SPL_UART_IMAGE ?= "${SPL_UART_BINARY}-${MACHINE}-${PV}-${PR}"
 SPL_UART_SYMLINK ?= "${SPL_UART_BINARY}-${MACHINE}"
-
-do_compile () {
-	unset LDFLAGS
-	unset CFLAGS
-	unset CPPFLAGS
-
-    if [ "x${UBOOT_CONFIG}" != "x" ]
-    then
-		for config in ${UBOOT_MACHINE}; do
-			i=`expr $i + 1`;
-			for type in ${UBOOT_CONFIG}; do
-				j=`expr $j + 1`;
-				if [ $j -eq $i ]
-				then
-					oe_runmake O=build_${config} ${config}
-					for var in ${UBOOT_EXTRA_CONF}; do
-						echo "${var}" >> build_${config}/.config
-					done
-					oe_runmake O=build_${config} ${UBOOT_MAKE_TARGET}
-					cp  ${S}/build_${config}/${UBOOT_BINARY} ${S}/build_${config}/u-boot-${type}.${UBOOT_SUFFIX}
-				fi
-			done
-		done
-
-	else
-		oe_runmake ${UBOOT_MACHINE}
-		for var in ${UBOOT_EXTRA_CONF}; do
-			echo "${var}" >> .config
-		done
-		oe_runmake ${UBOOT_MAKE_TARGET}
-	fi
-}
 
 do_install_append () {
 	if [ -n "${UBOOT_CONFIG}" ]
