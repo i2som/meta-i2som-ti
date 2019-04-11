@@ -24,6 +24,8 @@ UBOOT_ARCH = "arm"
 UBOOT_ENTRYPOINT = "0x80008000"
 UBOOT_LOADADDRESS = "0x80008000"
 
+# i2SOM BSP default settings
+#IMAGE_CLASSES = "image_types_i2som"
 
 # Kernel
 PREFERRED_PROVIDER_virtual/kernel = "linux-i2som"
@@ -55,4 +57,4 @@ PREFERRED_PROVIDER_virtual/egl ?= "ti-sgx-ddk-um"
 QT_QPA_DEFAULT_PLATFORM ?= "${@bb.utils.contains('MACHINE_FEATURES', 'sgx', 'eglfs', 'linuxfb', d)}"
 
 # default images to build
-IMAGE_FSTYPES ?= "tar.gz ubifs ext4"
+#IMAGE_FSTYPES ?= "tar.gz ext4"
