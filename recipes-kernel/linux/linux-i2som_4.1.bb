@@ -8,7 +8,7 @@ SRC_URI = "${GIT_URL};branch=${BRANCH}"
 PR = "${INC_PR}.0"
 
 # NOTE: Keep version in filename in sync with commit id!
-SRCREV = "recipes-kernel/linux/linux-i2som_4.1.bb"
+SRCREV = "311f1cf4e8e481c2817a300da63cfd995654c9df"
 BRANCH = "master"
 
 S = "${WORKDIR}/git"
