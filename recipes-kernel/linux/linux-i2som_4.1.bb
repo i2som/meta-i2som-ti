@@ -2,8 +2,12 @@ include linux-common.inc
 
 DESCRIPTION = "The linux-i2som recipe for i2S-AM335x SoM products."
 
+FILESEXTRAPATHS_append := "${THISDIR}/${PN}"
+
 GIT_URL = "git://${HOME}/i2S-AM335x/i2S-Sitara-Linux"
 SRC_URI = "${GIT_URL};branch=${BRANCH}"
+
+SRC_URI_append = " ${@bb.utils.contains('MACHINE_FEATURES', 'suspend', 'file://am335x-cm3.cfg', '', d)} "
 
 PR = "${INC_PR}.0"
 
@@ -21,4 +25,5 @@ RDEPENDS_kernel-modules_ti33x = "\
     cryptodev-module \
 "
 
+#KERNEL_MODULE_AUTOLOAD += "g_ether"
 COMPATIBLE_MACHINE  = "i2sam335x"
