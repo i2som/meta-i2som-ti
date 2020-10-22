@@ -121,7 +121,7 @@ cat << EOF > "${TMP_BOOTDIR}/linux_fit.its"
             images {
                 kernel@1 {
                     description = "Vanilla Linux kernel";
-                    data = /incbin/("zImage-i2cam335xbn.bin");
+                    data = /incbin/("zImage-i2cam335xb-i2s335ub4d256n256.bin");
                     type = "kernel";
                     arch = "arm";
                     os = "linux";
