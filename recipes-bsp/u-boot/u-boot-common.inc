@@ -23,7 +23,7 @@ LICENSE = "GPLv2+"
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
 
 BRANCH ?= "master"
-SRC_URI = "git:///${HOME}/i2S-AM335x/i2S-Sitara-UBoot;branch=${BRANCH}"
+SRC_URI = "git:///${HOME}/i2SOM-AM335x/i2SOM-Sitara-UBoot;branch=${BRANCH}"
 
 PV_append = "+git${SRCPV}"
 
