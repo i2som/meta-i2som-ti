@@ -4,7 +4,7 @@ DESCRIPTION = "The linux-i2som recipe for i2S-AM335x SoM products."
 
 FILESEXTRAPATHS_append := "${THISDIR}/${PN}"
 
-GIT_URL = "git://${HOME}/i2S-AM335x/i2S-Sitara-Linux"
+GIT_URL = "git://${HOME}/i2SOM-AM335x/i2SOM-Sitara-Linux"
 SRC_URI = "${GIT_URL};branch=${BRANCH}"
 
 SRC_URI_append = " ${@bb.utils.contains('MACHINE_FEATURES', 'suspend', 'file://am335x-cm3.cfg', '', d)} "
