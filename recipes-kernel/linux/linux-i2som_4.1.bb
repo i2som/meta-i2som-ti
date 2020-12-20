@@ -26,4 +26,4 @@ RDEPENDS_kernel-modules_ti33x = "\
 "
 
 #KERNEL_MODULE_AUTOLOAD += "g_ether"
-COMPATIBLE_MACHINE  = "i2sam335x"
+COMPATIBLE_MACHINE = "(ti33x|i2sam335x)"

@@ -50,5 +50,4 @@ pkg_postinst_${PN}() {
 	fi
 }
 
-#COMPATIBLE_MACHINE = "(i2cam335xbn|i2cam335xbe)"
-COMPATIBLE_MACHINE = "(i2sam335x)"
+COMPATIBLE_MACHINE = "(ti33x|i2sam335x)"
